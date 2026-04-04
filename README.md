@@ -58,6 +58,13 @@ TRAFFIC-ACCIDENT-RISK-PREDICTION/
 ### 1. Install dependencies
 
 ```bash
+git clone https://github.com/manand05/traffic-accident-risk-prediction.git
+cd traffic-accident-risk-prediction
+
+python3 -m venv .venv
+source .venv/bin/activate        # macOS / Linux
+# .venv\Scripts\activate         # Windows
+
 pip install -r requirements.txt
 ```
 
@@ -109,17 +116,11 @@ plotly
 statsmodels
 patsy
 xgboost
-fastparquet        # for parquet files
-holidays       # for holiday feature generation
+fastparquet
+holidays
 scipy
 joblib
 pickle
-```
-
-Install all at once:
-
-```bash
-pip install -r requirements.txt
 ```
 
 ---
@@ -131,11 +132,7 @@ All randomness is controlled via `random_state=42` throughout. To fully reproduc
 1. Use Python 3.9+
 2. Install exact versions from `requirements.txt`
 3. Run `dataset_preprocessing.ipynb` first to regenerate `modelling_dataset.parquet`
-4. Run modelling notebooks top-to-bottom without skipping cells
-5. **Do not use `train_test_split`** all splits are chronological to prevent data leakage:
-   - Train: before 2021-03-16
-   - Validation: 2021-03-16 to 2022-03-23
-   - Test: after 2022-03-23
+4. Run the files in the `dataset_modelling` folder in any order and compare using `model_evaluation.ipynb`
 
 ---
 
