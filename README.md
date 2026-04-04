@@ -109,8 +109,11 @@ plotly
 statsmodels
 patsy
 xgboost
-pyarrow        # for parquet files
+fastparquet        # for parquet files
 holidays       # for holiday feature generation
+scipy
+joblib
+pickle
 ```
 
 Install all at once:
